@@ -1,0 +1,21 @@
+[BEGINVDF]
+Comment=LifeReg v1.1.0 - Passive Lebensregeneration
+BaseDir=.\
+VDFName=.\LifeReg.vdf
+
+[FILES]
+; Resources (list the specific files from _work here)
+; _work\* -r
+
+; Script files
+Ninja\LifeReg\* -r
+
+[EXCLUDE]
+_work\Data\Scripts\* -r
+*.vm
+*.vdf
+*.bat
+
+[INCLUDE]
+
+[ENDVDF]
