@@ -79,9 +79,11 @@ func void Ninja_LifeReg_ApplyINI() {
 	Ninja_LifeReg_AllowInFight = STR_ToInt(ini_inFight);
 
 	Ninja_LifeReg_Permille_InFight = STR_ToInt(ini_InFightPercent);
-	if (Ninja_LifeReg_Permille_InFight > 100) {
+	if (Ninja_LifeReg_Permille_InFight >= 100) {
+		// This combo allows for full regeneration in fight
 		Ninja_LifeReg_AllowInFight = 1;
-		Ninja_LifeReg_Permille_InFight = 100;
+		Ninja_LifeReg_Permille_InFight = 0;
+
 		MEM_SetGothOpt(NINJA_LIFEREG_INI, NINJA_LIFEREG_INI_IN_FIGHT_PERCENT, "100");
 	} else if (Ninja_LifeReg_Permille_InFight <= 0) {
 		MEM_SetGothOpt(NINJA_LIFEREG_INI, NINJA_LIFEREG_INI_IN_FIGHT_PERCENT, "0");
